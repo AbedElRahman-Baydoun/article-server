@@ -45,8 +45,12 @@ class Article extends Model{
         $this->description = $description;
     }
 
-    public function toArray(){
-        return [$this->id, $this->name, $this->author, $this->description];
+    public function toDB(): array {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'author' => $this->author,
+            'description' => $this->description
+        ];
     }
-    
 }

@@ -1,7 +1,7 @@
 <?php
 require_once("Model.php");
 
-class Categpries extends Model{
+class Categories extends Model{
 
     private int $id; 
     private string $name;
@@ -34,7 +34,11 @@ class Categpries extends Model{
         $this->description = $description;
     }
 
-    public function toArray(){
-        return [$this->id, $this->name, $this->description];
+    public function toDB(): array {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'desciption' => $this->description
+        ];
     }
 }
